@@ -1,1 +1,1 @@
-"# purple-typescript" 
+This is a purple school's TypeScript course!
