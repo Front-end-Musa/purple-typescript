@@ -21,21 +21,23 @@ const needUserProperty = [
 ]
 
 interface User {
+    id: number,
+    firstName: string,
+    lastName: string,
+    maidenName: string,
+    age: number,
+    gender: string,
+    email: string,
+    phone: string,
+    username: string,
+    password: string,
+    birthDate: Date,
+    image: string
+}
+
+interface users {
     users: [
-        {
-            id: number;
-            firstName: string;
-            lastName: string;
-            maidenName: string;
-            age: number;
-            gender: string;
-            email: string;
-            phone: string;
-            username: string;
-            password: string;
-            birthDate: Date;
-            image: string;
-        }
+        User
     ]
 }
 
@@ -51,7 +53,7 @@ async function getData(url: string) {
     const { data, status } = await axios.get(url);
 
     if (isSuccess(status)) {
-        const user: User = {
+        const user: users = {
             users: [
                 {
                     id: data.users[0].id,
